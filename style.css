@@ -77,8 +77,8 @@ html, body {
       top: auto; left: auto;
       transform: none;
   
-      width: 100%;             /* full width */
-      max-width: none;
+      width: 80%;             /* full width */
+      max-width: 300px;
       margin: 0;               /* flush to edges */
       border-radius: 0;        /* no rounded corners */
       background: rgba(0, 0, 0, 0.7);  /* solid dark behind text */
