@@ -1,0 +1,56 @@
+/* Make body fill screen and hide scroll */
+body {
+    margin: 0; 
+    padding: 0; 
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Video covers entire background */
+  #bg-video {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.7);
+  }
+  
+  /* Centered, semi-transparent card */
+  .card {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    padding: 20px 30px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 80%;
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Heading style */
+  .card h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Paragraph style */
+  .card p {
+    font-size: 1rem;
+    margin: 0.5em 0;
+    line-height: 1.4;
+  }
+  
+  /* Signature style */
+  .signature {
+    margin-top: 1em;
+    font-style: italic;
+    font-weight: 600;
+  }
+  
