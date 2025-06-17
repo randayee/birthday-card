@@ -73,31 +73,28 @@ html, body {
   /* Override for small phones: page scroll, flexible layout */
   @media only screen and (max-width: 600px) {
     .card {
-      /* flow naturally in flex container */
-      position: relative;
-      top: auto;
-      left: auto;
+      position: relative;      /* flow normally */
+      top: auto; left: auto;
       transform: none;
   
-      /* almost full-width with margins */
-      width: 95%;
-      margin: 20px 0;
-      max-height: none;     /* allow full scroll */
-      overflow-y: visible;  /* page scroll, not inner card */
-  
-      /* adjust padding */
-      padding: 15px 20px;
+      width: 100%;             /* full width */
+      max-width: none;
+      margin: 0;               /* flush to edges */
+      border-radius: 0;        /* no rounded corners */
+      background: rgba(0, 0, 0, 0.7);  /* solid dark behind text */
+      padding: 25px 20px;      /* extra breathing room */
+      overflow: visible;       /* page scrolls */
     }
   
-    /* mobile heading size */
     .card h1 {
-      font-size: 1.6rem;
+      font-size: 1.8rem;       /* bigger heading */
+      line-height: 1.2;
     }
-  
-    /* mobile paragraph size */
     .card p {
-      font-size: 0.9rem;
-      line-height: 1.4;
+      font-size: 1rem;         /* bigger body text */
+      line-height: 1.6;        /* more spacing */
+      margin-bottom: 1em;
     }
   }
+  
   
