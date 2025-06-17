@@ -1,16 +1,23 @@
-/* Make body fill screen and hide scroll */
-body {
-    margin: 0; 
-    padding: 0; 
-    overflow: hidden;
-    font-family: 'Poppins', sans-serif;
+/* Make body fill screen and center content */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;  /* video still covers behind */
   }
   
   /* Video covers entire background */
   #bg-video {
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: -1;
     filter: brightness(0.7);
@@ -18,18 +25,24 @@ body {
   
   /* Centered, semi-transparent card */
   .card {
+    /* center on larger screens */
     position: absolute;
-    top: 50%; left: 50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
+  
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(5px);
     padding: 20px 25px;
     border-radius: 12px;
     text-align: center;
-    width: 90%;            /* use most of the viewport width */
-    max-width: 400px;      /* cap it for larger screens */
-    max-height: 80vh;      /* no taller than 80% of viewport height */
-    overflow-y: auto;      /* scroll if content is too tall */
+  
+    /* flexible sizing */
+    width: 80%;
+    max-width: 400px;
+    max-height: 85vh;    /* never taller than viewport */
+    overflow-y: auto;    /* scroll if it grows too tall */
+  
     color: white;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   }
@@ -57,16 +70,34 @@ body {
     font-weight: 600;
   }
   
-  /* Tweak font sizes & padding on small phones */
-@media only screen and (max-width: 480px) {
+  /* Override for small phones: page scroll, flexible layout */
+  @media only screen and (max-width: 600px) {
     .card {
+      /* flow naturally in flex container */
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+  
+      /* almost full-width with margins */
+      width: 95%;
+      margin: 20px 0;
+      max-height: none;     /* allow full scroll */
+      overflow-y: visible;  /* page scroll, not inner card */
+  
+      /* adjust padding */
       padding: 15px 20px;
     }
+  
+    /* mobile heading size */
     .card h1 {
       font-size: 1.6rem;
     }
+  
+    /* mobile paragraph size */
     .card p {
       font-size: 0.9rem;
       line-height: 1.4;
     }
   }
+  
