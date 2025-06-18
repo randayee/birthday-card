@@ -22,7 +22,27 @@ body {
   filter: brightness(0.7);
 }
 
-/* 3. Card styling */
+/* 3. Open‐Message Button */
+.open-button {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 2;               /* above the card */
+  transition: transform 0.3s ease;
+}
+.open-button:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* 4. Card styling */
 .card {
   position: absolute;
   top: 50%; left: 50%;
@@ -43,7 +63,7 @@ body {
   z-index: 1;
 }
 
-/* 4. Typography */
+/* 5. Typography */
 .card h1 {
   font-size: 1.8rem;   /* original size */
   margin-bottom: 0.5em;
@@ -65,7 +85,7 @@ body {
   font-size: 1rem;     /* original size */
 }
 
-/* 5. Mobile tweaks (slightly smaller text, transparent bg) */
+/* 6. Mobile tweaks (slightly smaller text, transparent bg) */
 @media only screen and (max-width: 600px) {
   .card {
     position: relative;
